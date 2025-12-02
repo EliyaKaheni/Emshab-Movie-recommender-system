@@ -1,0 +1,79 @@
+/* RTL & base direction */
+html, body, [class*="css"] {
+    direction: rtl;
+    text-align: right;
+    font-family: "IRANSans", "Vazirmatn", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Main background */
+body {
+    background: #0f172a;
+}
+
+/* Streamlit main block */
+.main {
+    background: #020617;
+    color: #e5e7eb;
+}
+
+/* Sidebar styles */
+section[data-testid="stSidebar"] {
+    background: #020617 !important;
+    border-left: 1px solid #1e293b;
+}
+section[data-testid="stSidebar"] * {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Header container */
+.app-header {
+    background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 40%, #6366f1 100%);
+    padding: 18px 24px;
+    border-radius: 18px;
+    margin-bottom: 16px;
+    color: #f9fafb;
+    box-shadow: 0 18px 40px rgba(15,23,42,0.8);
+    border: 1px solid rgba(148,163,184,0.35);
+}
+
+.app-header-title {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.app-header-subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Stats cards */
+.stat-card {
+    background: #020617;
+    border-radius: 16px;
+    padding: 12px 16px;
+    border: 1px solid #1f2937;
+    box-shadow: 0 10px 25px rgba(15,23,42,0.6);
+}
+.stat-label {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 4px;
+}
+.stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #e5e7eb;
+}
+
+/* Tabs */
+button[data-baseweb="tab"] {
+    font-weight: 600;
+    padding: 8px 16px;
+}
+
+/* Dataframe right alignment */
+.dataframe td, .dataframe th {
+    text-align: right !important;
+}
