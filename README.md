@@ -19,12 +19,16 @@ It includes **Collaborative Filtering (SVD++)**, **Content-based Filtering**, a 
 - Computes cosine similarity between movies  
 - Recommends items similar to those the user liked  
 
-### 🔹 3. Hybrid Recommender
+### 🔹 3. Hybrid Recommender  
+The hybrid model combines both Collaborative Filtering (SVD++) and Content-based similarity to produce more robust recommendations:
 \[
-\text{score} = \alpha \cdot \text{SVD++} + (1-\alpha) \cdot \text{Content-based}
+\text{HybridScore}(i) = \alpha \cdot \text{SVD++}(i) + (1 - \alpha) \cdot \text{Content}(i)
 \]
-- α is configurable in the UI  
-- More stable results than either method alone  
+
+- **α** controls the weight of each model (configurable in the UI)  
+- Provides more **stable and accurate** recommendations than using SVD++ or Content alone  
+- Helps balance **behavior-based** and **content-based** signals  
+
 
 ### 🔹 4. New User Cold-start Handling (Folding-in)
 - User selects movies they have watched  
@@ -112,49 +116,11 @@ http://localhost:8501
 
 ## 📦 Dataset: MovieLens (ml-latest-small)
 
-Place dataset here:
-
-```
-data/ml-latest-small/
-```
-
 Contains:
 
 - ~100,000 ratings  
 - ~9,000 movies  
 - tags + genres  
-
----
-
-## 📺 Screenshots (optional)
-
-Add screenshots in a folder named `images/` and reference them like:
-
-```
-![Home Page](images/home.png)
-![Hybrid Recommendations](images/hybrid.png)
-![Cold Start](images/coldstart.png)
-```
-
----
-
-## 🧪 Potential Evaluation Metrics (Optional)
-You may add:
-
-- NDCG@k  
-- Precision@k  
-- Recall@k  
-- MAP  
-- Coverage  
-
----
-
-## 🚀 Future Improvements (TODO)
-- Add evaluation page in Streamlit  
-- Add light/dark theme toggle  
-- Deploy on Streamlit Cloud / HuggingFace Spaces  
-- Add deep learning recommenders (NeuMF, LightFM)  
-- Add user login & database storage  
 
 ---
 
