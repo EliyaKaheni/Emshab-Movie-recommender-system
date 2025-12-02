@@ -158,27 +158,8 @@ You may add:
 
 ---
 
-## 👥 Team Members
-
-| Name | Role |
-|------|------|
-| Member 1 | ML Engineer |
-| Member 2 | Streamlit Developer |
-| Member 3 | Data Analyst |
-| Member 4 | UI/UX Designer |
-
-(Replace with your actual team names.)
-
----
-
 ## ⭐ Support the Project
 
 If you found this project useful, please ⭐ star the repository!
 
 ---
-
-## 📄 License
-
-MIT License  
-Free to use and modify.
-
