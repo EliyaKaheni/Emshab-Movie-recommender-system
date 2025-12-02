@@ -1,0 +1,184 @@
+# 🎬 Movie Recommender System  
+### SVD++, Content-based, Hybrid & Cold-start | Streamlit Web App
+
+This project implements a complete movie recommender system using the MovieLens dataset.  
+It includes **Collaborative Filtering (SVD++)**, **Content-based Filtering**, a **Hybrid Model**, and a **Cold-start solution** for new users — all wrapped inside a modern **Streamlit web application**.
+
+---
+
+## 📌 Key Features
+
+### 🔹 1. SVD++ Collaborative Filtering
+- Trained using Surprise library  
+- Captures implicit and explicit feedback  
+- Highly effective for sparse rating datasets  
+
+### 🔹 2. Content-based Model (Tags + TF-IDF)
+- Aggregates tags per movie  
+- Builds a TF-IDF vector representation  
+- Computes cosine similarity between movies  
+- Recommends items similar to those the user liked  
+
+### 🔹 3. Hybrid Recommender
+\[
+\text{score} = \alpha \cdot \text{SVD++} + (1-\alpha) \cdot \text{Content-based}
+\]
+- α is configurable in the UI  
+- More stable results than either method alone  
+
+### 🔹 4. New User Cold-start Handling (Folding-in)
+- User selects movies they have watched  
+- Assigns custom ratings  
+- Model updates **only the user’s latent vector (p_u)**  
+- No retraining of the main model  
+- Fast & practical, used in real-world recommenders  
+
+---
+
+## 🏗 Project Structure
+
+```
+movie-recommender/
+├── app.py
+├── requirements.txt
+├── README.md
+├── styles/
+│   └── style.css
+├── models/
+│   └── svd_model.pkl
+├── data/
+│   └── ml-latest-small/
+└── recommender/
+    ├── __init__.py
+    ├── data_loader.py
+    ├── svdpp_model.py
+    ├── tag_model.py
+    ├── hybrid.py
+    └── new_user.py
+```
+
+---
+
+## 🚀 How to Run
+
+### 1. (Optional) Create a Python virtual environment
+```
+python -m venv venv
+source venv/bin/activate       # Linux/Mac
+venv\Scripts\activate          # Windows
+```
+
+### 2. Install dependencies
+```
+pip install -r requirements.txt
+```
+
+### 3. Launch the Streamlit app
+```
+streamlit run app.py
+```
+
+App will open automatically at:
+```
+http://localhost:8501
+```
+
+---
+
+## 📊 Models Overview
+
+### 🟦 SVD++
+- Learns latent factors for users & items  
+- Uses implicit feedback (SVD++)  
+- Predicts ratings for unseen items  
+
+### 🟩 Content-based Filtering
+- Each movie gets a combined “tag text”  
+- TF-IDF vectorization  
+- Cosine similarity for recommendation  
+
+### 🟧 Hybrid Model
+- Normalizes both SVD++ and Content scores  
+- Weighted sum using α  
+- More robust and personalized recommendations  
+
+### 🟥 Cold-start Solution (New Users)
+- Implements **SVD++ Folding-in**  
+- Only updates p_u and b_u  
+- Does not require retraining  
+- Generates instant recommendations for new users  
+
+---
+
+## 📦 Dataset: MovieLens (ml-latest-small)
+
+Place dataset here:
+
+```
+data/ml-latest-small/
+```
+
+Contains:
+
+- ~100,000 ratings  
+- ~9,000 movies  
+- tags + genres  
+
+---
+
+## 📺 Screenshots (optional)
+
+Add screenshots in a folder named `images/` and reference them like:
+
+```
+![Home Page](images/home.png)
+![Hybrid Recommendations](images/hybrid.png)
+![Cold Start](images/coldstart.png)
+```
+
+---
+
+## 🧪 Potential Evaluation Metrics (Optional)
+You may add:
+
+- NDCG@k  
+- Precision@k  
+- Recall@k  
+- MAP  
+- Coverage  
+
+---
+
+## 🚀 Future Improvements (TODO)
+- Add evaluation page in Streamlit  
+- Add light/dark theme toggle  
+- Deploy on Streamlit Cloud / HuggingFace Spaces  
+- Add deep learning recommenders (NeuMF, LightFM)  
+- Add user login & database storage  
+
+---
+
+## 👥 Team Members
+
+| Name | Role |
+|------|------|
+| Member 1 | ML Engineer |
+| Member 2 | Streamlit Developer |
+| Member 3 | Data Analyst |
+| Member 4 | UI/UX Designer |
+
+(Replace with your actual team names.)
+
+---
+
+## ⭐ Support the Project
+
+If you found this project useful, please ⭐ star the repository!
+
+---
+
+## 📄 License
+
+MIT License  
+Free to use and modify.
+
