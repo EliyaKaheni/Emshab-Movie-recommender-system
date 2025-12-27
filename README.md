@@ -106,12 +106,6 @@ http://localhost:8501
 - Weighted sum using α  
 - More robust and personalized recommendations  
 
-### 🟥 Cold-start Solution (New Users)
-- Implements **SVD++ Folding-in**  
-- Only updates p_u and b_u  
-- Does not require retraining  
-- Generates instant recommendations for new users  
-
 ---
 
 ## 📦 Dataset: MovieLens (ml-latest-small)
