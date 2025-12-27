@@ -46,8 +46,8 @@ movie-recommender/
 ├── app.py
 ├── requirements.txt
 ├── README.md
-├── styles/
-│   └── style.css
+├── scripts/
+│   └── retrain.sh
 ├── models/
 │   └── svd_model.pkl
 ├── data/
